@@ -5,3 +5,4 @@ openpyxl
 matplotlib
 numpy
 scikit-learn
+fpdf2
