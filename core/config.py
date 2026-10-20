@@ -1,11 +1,17 @@
-import sys, os
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_DIR = os.path.dirname(BASE_DIR)
-ROOT_DIR = os.path.dirname(PROJECT_DIR)
-DATA_PATH = os.path.join(ROOT_DIR, "P8. UTS_Business Intelligence.xlsx")
-OUTPUT_DIR = os.path.join(ROOT_DIR, "output")
+import os
+import sys
+
+CORE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(CORE_DIR)
+
+sys.path.insert(0, CORE_DIR)
+
+DATA_FILENAME = "P8. UTS_Business Intelligence.xlsx"
+DATA_PATH = os.path.join(PROJECT_DIR, DATA_FILENAME)
+
+OUTPUT_DIR = os.path.join(PROJECT_DIR, "output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
